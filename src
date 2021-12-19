@@ -1,0 +1,30 @@
+package hillel;
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+        
+        Scanner input = new Scanner(System.in);
+        System.out.println("Введите Вашу сумму взноса: ");
+        double sum = input.nextInt();
+        System.out.println("Введите процент годовых: ");
+        double percent = input.nextInt();
+        System.out.println("Введите длительность вклада (в годах): ");
+        int year = input.nextInt();
+
+        double profit=0;
+        for (int i=0; i<year; i++){
+            double year_sum = sum*percent*0.01 + sum;
+            profit = year_sum-sum+profit;
+            sum = year_sum;
+
+
+            System.out.println(year_sum + " - годовая прибыль по итогу " + (i+1) + "-го года");
+            System.out.println(profit + " - денежный прирост");
+
+
+
+
+        }
+
+    }}
